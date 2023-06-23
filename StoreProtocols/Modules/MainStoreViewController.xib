@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="cvStore" destination="2RR-lZ-MYg" id="AlU-jv-Zh0"/>
                 <outlet property="tblStore" destination="7Ku-61-ZUH" id="fyd-1R-oo5"/>
+                <outlet property="view" destination="iN0-l3-epB" id="myT-Eu-duM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3436EDF22A45175E00276E79 /* EktCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3436EDF12A45175E00276E79 /* EktCategories.swift */; };
 		34ACD7942A44B3060076AEA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACD7932A44B3060076AEA6 /* AppDelegate.swift */; };
 		34ACD7962A44B3060076AEA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACD7952A44B3060076AEA6 /* SceneDelegate.swift */; };
 		34ACD7982A44B3060076AEA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACD7972A44B3060076AEA6 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3436EDF12A45175E00276E79 /* EktCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EktCategories.swift; sourceTree = "<group>"; };
 		34ACD7902A44B3060076AEA6 /* StoreProtocols.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreProtocols.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ACD7932A44B3060076AEA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34ACD7952A44B3060076AEA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				34ACD7B52A44B6CB0076AEA6 /* MiscelaneousItem.swift */,
 				34ACD7BA2A44C17C0076AEA6 /* Pokeballs.swift */,
+				3436EDF12A45175E00276E79 /* EktCategories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				34ACD7C52A44CEF50076AEA6 /* MicsItemTableViewCell.swift in Sources */,
 				34DD6F9D2A45126F0038D23A /* EktExtension.swift in Sources */,
 				34ACD7942A44B3060076AEA6 /* AppDelegate.swift in Sources */,
+				3436EDF22A45175E00276E79 /* EktCategories.swift in Sources */,
 				34ACD7B02A44B5780076AEA6 /* MainStoreRouter.swift in Sources */,
 				34DD6F962A450A1B0038D23A /* DiscoverCollectionViewCell.swift in Sources */,
 				34ACD7962A44B3060076AEA6 /* SceneDelegate.swift in Sources */,

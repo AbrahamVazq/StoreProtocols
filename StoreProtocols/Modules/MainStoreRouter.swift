@@ -16,7 +16,19 @@ class MainStoreRouter {
         let interactor = MainStoreInteractor()
         let router = MainStoreRouter()
         
+        let arrCategories: [setDiscoverItemsProtocol] = [
+            EktCategory(strName: "Comedores y Antecomedores", imgItem: nil),
+            EktCategory(strName: "Videojuegos", imgItem: nil),
+            EktCategory(strName: "Cómputo", imgItem: nil),
+            EktCategory(strName: "Perfumes", imgItem: nil),
+            EktCategory(strName: "Llantas", imgItem: nil),
+            EktCategory(strName: "Ropa", imgItem: nil),
+            EktCategory(strName: "Tenis", imgItem: nil),
+            EktCategory(strName: "Moda y accesorios", imgItem: nil),
+        ]
+        
         view.presenter = presenter
+        view.arrCategories = arrCategories
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router

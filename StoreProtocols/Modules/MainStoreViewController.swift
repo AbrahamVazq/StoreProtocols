@@ -7,20 +7,29 @@ import UIKit
 
 class MainStoreViewController: UIViewController {
     //MARK: - O U T L E T S
-    @IBOutlet weak var tblStore: UITableView!{
-        didSet { self.tblStore.dataSource = self }
-    }
-    @IBOutlet weak var cvStore: UICollectionView!{
-        didSet { self.cvStore.dataSource = self }
-    }
+    @IBOutlet weak var tblStore: UITableView!
+    @IBOutlet weak var cvStore: UICollectionView!
     
 
     var presenter: MainStore_ViewToPresenterProtocol?
+    
+    var arrCategories: [setDiscoverItemsProtocol]?
 
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpTblAndCV()
     }
+    
+    private func setUpTblAndCV(){
+        self.cvStore.dataSource = self
+        self.cvStore.register(DiscoverCollectionViewCell.nib, forCellWithReuseIdentifier: DiscoverCollectionViewCell.identifier)
+        
+        self.tblStore.dataSource = self
+        self.tblStore.register(MicsItemTableViewCell.nib, forCellReuseIdentifier: MicsItemTableViewCell.identifier)
+        
+    }
+    
 }
 
 // MARK: - P R E S E N T E R · T O · V I E W
@@ -43,12 +52,29 @@ extension MainStoreViewController:UITableViewDataSource {
 
 extension MainStoreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return arrCategories?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cCell = collectionView.dequeueReusableCell(withReuseIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        if let cCell = collectionView.dequeueReusableCell(withReuseIdentifier: DiscoverCollectionViewCell.identifier, for: indexPath) as? DiscoverCollectionViewCell, let category = arrCategories?[indexPath.row] {
+            cCell.setUpDiscoverCell(with: category)
+            return cCell
+        }else {
+            let cCell = collectionView.dequeueReusableCell(withReuseIdentifier: DiscoverCollectionViewCell.identifier, for: indexPath) as? DiscoverCollectionViewCell ?? DiscoverCollectionViewCell()
+            return cCell
+        }
     }
     
+}
+
+extension MainStoreViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120.0, height: 120.0)
+    }
+    
+    //Space Needed
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 8
+        }
     
 }
